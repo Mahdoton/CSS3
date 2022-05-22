@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./c.css" media="screen and (min-width:800px)">
+  <style>
+    /* margin: 0 auto只适用于块元素或者行内块元素，作用是将当前元素在父元素内部进行水平居中 */
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    .boss {
+      margin: 0 auto;
+      width: 80%;
+      background-color: bisque;
+      height: 100px;
+    }
+
+    .a {
+      margin: 0 auto;
+      background-color: aqua;
+      float: left;
+      width: 33.333%;
+      height: 100%;
+    }
+
+    .b {
+      float: left;
+      width: 33.333%;
+      height: 100%;
+    }
+
+    .c {
+      background-color: aqua;
+      float: left;
+      width: 33.333%;
+      height: 100%;
+    }
+
+    /* 媒体查询 */
+    @media screen and (min-width:800px) and (max-width:1000px) {
+      .a {
+        background-color: pink;
+      }
+    }
+
+    @media screen and (min-width:1001px) {
+      .a {
+        background-color: yellow;
+      }
+    }
+
+    @media screen and (max-width:700px) {
+      .a {
+        background-color: black;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="boss">
+    <div class="a">
+      <span>111</span>
+    </div>
+    <div class="b">2</div>
+    <div class="c">3</div>
+  </div>
+</body>
+
+</html>
