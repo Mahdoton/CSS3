@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style type="text/css">
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    #test {
+      width: 16rem;
+      height: 1px;
+      margin-top: 1rem;
+      background: black;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="test"></div>
+</body>
+<script type="text/javascript">
+  //第一种方案   大项目可以使用
+  window.onload = function () {
+    (function () {
+      var dpr = window.devicePixelRatio || 1;  //像素比
+      var styleNode = document.createElement("style");
+      var w = document.documentElement.clientWidth * dpr / 16;
+      //乘以像素比,目的是保证rem适配不会被缩放
+      styleNode.innerHTML = "html{font-size:" + w + "px!important}";
+      document.head.appendChild(styleNode);
+
+      var scale = 1 / dpr;
+      var meta = document.querySelector("meta[name='viewport']");
+      meta.content = "width=device-width,initial-scale=" + scale + ",minimum-scale=" + scale + ",maximum-scale=" + scale + ",user-scalable=no";
+    })()
+    //使用rem适配的不会受影响,使用px的会缩放对应比例
+  }
+</script>
+
+</html>
