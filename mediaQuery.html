@@ -9,12 +9,13 @@
   <link rel="stylesheet" href="./c.css" media="screen and (min-width:800px)">
   <style>
     /* margin: 0 auto只适用于块元素或者行内块元素，作用是将当前元素在父元素内部进行水平居中 */
+    /* 前提条件是此元素有宽度 */
     * {
       margin: 0;
       padding: 0;
     }
 
-    .boss {
+    /* .boss {
       margin: 0 auto;
       width: 80%;
       background-color: bisque;
@@ -40,10 +41,10 @@
       float: left;
       width: 33.333%;
       height: 100%;
-    }
+    } */
 
     /* 媒体查询 */
-    @media screen and (min-width:800px) and (max-width:1000px) {
+    /* @media screen and (min-width:800px) and (max-width:1000px) {
       .a {
         background-color: pink;
       }
@@ -59,18 +60,30 @@
       .a {
         background-color: black;
       }
+    } */
+    body{
+      min-width: 320px;
+      width: 750px;
+      margin: 0 auto;
+      display: flex;
+    }
+    a{
+      width: 100px!important;
+      background-color: black!important;
     }
   </style>
 </head>
 
 <body>
-  <div class="boss">
+  <!-- <div class="boss">
     <div class="a">
       <span>111</span>
     </div>
     <div class="b">2</div>
     <div class="c">3</div>
-  </div>
+  </div> -->
+  <div>4321432</div>
+  <a href=""></a>
 </body>
 
 </html>
