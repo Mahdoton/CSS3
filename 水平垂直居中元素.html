@@ -1,0 +1,109 @@
+<!-- 方案一：使用定位配合margin -->
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box{
+      width: 500px;
+      height: 500px;
+      background-color: black;
+
+      position: relative;
+    }
+    .wrap{
+      width: 200px;
+      height: 200px;
+      background-color: wheat;
+
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
+      bottom: 0;
+      margin:auto;
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <div class="wrap"></div>
+  </div>
+</body>
+</html> -->
+
+<!-- 方案二：定位配合transform -->
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box{
+      width: 500px;
+      height: 500px;
+      background-color: black;
+
+      position: relative;
+    }
+    .wrap{
+      width: 200px;
+      height: 200px;
+      background-color: wheat;
+
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <div class="wrap"></div>
+  </div>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box{
+      width: 500px;
+      height: 500px;
+      background-color: black;
+
+      /* 新版本 */
+      /* display: flex;
+      justify-content: center;
+      align-items: center; */
+
+      /* 老版本 */
+      display: -webkit-box;
+      -webkit-box-pack: center;
+      -webkit-box-align: center;
+    }
+    .wrap{
+      width: 200px;
+      height: 200px;
+      background-color: wheat;
+
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <div class="wrap"></div>
+  </div>
+</body>
+</html>

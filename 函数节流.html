@@ -1,0 +1,54 @@
+<!--
+ * @Author: Mahdoton 572250782@qq.com
+ * @Date: 2022-05-24 14:19:33
+ * @LastEditors: Mahdoton 572250782@qq.com
+ * @LastEditTime: 2022-05-24 20:43:04
+ * @FilePath: \CSS3\函数节流.html
+ * @Description: 函数节流
+ * 
+ * Copyright (c) 2022 by Mahdoton 572250782@qq.com, All Rights Reserved. 
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>、
+  <style>
+    html {
+      height: 500%;
+    }
+  </style>
+</head>
+
+<body>
+  <script>
+    window.onload = function () {
+      function throotle(fn, delay) {
+        // 记录上一次函数触发的时间
+        let lastTime = 0;
+        return function () {
+          // 记录当前时间
+          let nowTime = Date.now();
+          if (nowTime - lastTime > delay) {
+            fn.call(this);
+            lastTime = nowTime;
+          }
+        }
+      }
+
+      document.onscroll = throotle(() => {
+        console.log(`throotle函数被触发了${Date.now()}`)
+      }, 300)
+
+    }
+
+
+  </script>
+</body>
+<script>
+</script>
+
+</html>
