@@ -2,8 +2,8 @@
  * @Author: Mahdoton 572250782@qq.com
  * @Date: 2022-05-24 14:19:33
  * @LastEditors: Mahdoton 572250782@qq.com
- * @LastEditTime: 2022-05-24 20:43:04
- * @FilePath: \CSS3\函数节流.html
+ * @LastEditTime: 2022-05-25 13:42:28
+ * @FilePath: \CSS3\函数节流与函数防抖.html
  * @Description: 函数节流
  * 
  * Copyright (c) 2022 by Mahdoton 572250782@qq.com, All Rights Reserved. 
@@ -15,7 +15,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>、
+  <title>Document</title>
   <style>
     html {
       height: 500%;
@@ -24,8 +24,10 @@
 </head>
 
 <body>
+  <button>点击</button>
   <script>
     window.onload = function () {
+      // 函数节流：在规定时间内，函数只执行一次
       function throotle(fn, delay) {
         // 记录上一次函数触发的时间
         let lastTime = 0;
@@ -43,6 +45,28 @@
         console.log(`throotle函数被触发了${Date.now()}`)
       }, 300)
 
+
+
+      // 函数防抖：在规定时间内，函数只执行最后一次
+      /**
+       * @description: 
+       * @param {*} fn 需要执行的函数
+       * @param {*} delay 延迟时间
+       * @return {*}
+       */
+      function debounce(fn, delay) {
+        let timer = null;
+        return function () {
+          // 如果前面有定时器  先清除
+          if (timer) clearTimeout(timer)
+          // 记录上一次定时器
+          timer = setTimeout(function () {
+            fn.apply(this);
+          }, delay);
+        }
+      }
+      document.querySelector("button").onclick =
+        debounce(function () { console.log("点击事件被触发了" + Date.now()) }, 1000);
     }
 
 

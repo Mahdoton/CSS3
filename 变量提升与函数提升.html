@@ -1,0 +1,39 @@
+<!--
+ * @Author: Mahdoton 572250782@qq.com
+ * @Date: 2022-05-25 20:09:12
+ * @LastEditors: Mahdoton 572250782@qq.com
+ * @LastEditTime: 2022-05-25 20:35:30
+ * @FilePath: \CSS3\变量提升与函数提升.html
+ * @Description: 
+ * 
+ * Copyright (c) 2022 by Mahdoton 572250782@qq.com, All Rights Reserved. 
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 只有用var声明的变量才有提升效果  const let声明均没有提升效果
+    console.log(up);
+    var up = 1;
+    // 用声明方式声明的函数才有提升效果
+    show();
+     function show(){
+       console.log("show()");
+     }
+    // 如果是将一个函数的引用赋值给另一个变量  那么这个函数没有提升效果
+    // var show = function(){
+    //   console.log("show()")
+    // }
+    // show();
+  </script>
+</body>
+
+</html>
