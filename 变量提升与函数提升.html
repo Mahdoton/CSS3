@@ -2,7 +2,7 @@
  * @Author: Mahdoton 572250782@qq.com
  * @Date: 2022-05-25 20:09:12
  * @LastEditors: Mahdoton 572250782@qq.com
- * @LastEditTime: 2022-05-25 20:35:30
+ * @LastEditTime: 2022-05-26 21:13:14
  * @FilePath: \CSS3\变量提升与函数提升.html
  * @Description: 
  * 
@@ -25,14 +25,22 @@
     var up = 1;
     // 用声明方式声明的函数才有提升效果
     show();
-     function show(){
-       console.log("show()");
-     }
+
+    function show() {
+      console.log("show()");
+    }
     // 如果是将一个函数的引用赋值给另一个变量  那么这个函数没有提升效果
     // var show = function(){
     //   console.log("show()")
     // }
     // show();
+
+    var equal = 12;
+    function equal(){
+      console.log("equal()")
+    }
+
+    // 变量提升和函数提升的命名发生冲突时  会优先保留函数  摒弃变量
   </script>
 </body>
 
