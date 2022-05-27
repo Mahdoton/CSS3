@@ -1,0 +1,52 @@
+<!--
+ * @Author: Mahdoton 572250782@qq.com
+ * @Date: 2022-05-27 20:48:23
+ * @LastEditors: Mahdoton 572250782@qq.com
+ * @LastEditTime: 2022-05-27 21:13:01
+ * @FilePath: \CSS3\Canvas\例子.html
+ * @Description: 
+ * 
+ * Copyright (c) 2022 by Mahdoton 572250782@qq.com, All Rights Reserved. 
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #cv {
+      display: block;
+      margin: 0 auto;
+      border: 1px solid black;
+    }
+  </style>
+</head>
+
+<body>
+  <canvas id="cv" width="500px" height="500px"></canvas>
+  <script>
+    window.onload = function () {
+      function draw() {
+        /** @type {HTMLCanvasElement} */
+        var canvas = document.getElementById("canvas");
+        if (canvas.getContext) {
+          var ctx = canvas.getContext("2d");
+          // (property) CanvasFillStrokeStyles.fillStyle: string | CanvasGradient | CanvasPattern
+          ctx.fillStyle = "rgb(200,0,0)";
+          // (method) CanvasRect.fillRect(x: number, y: number, w: number, h: number): void
+          ctx.fillRect(10, 10, 55, 50);
+
+          ctx.fillStyle = "rgba(0, 0, 200, 0.5)";
+          // (method) CanvasRect.fillRect(x: number, y: number, w: number, h: number): void
+          ctx.fillRect(30, 30, 55, 50);
+        }
+      }
+      draw();
+    }
+  </script>
+</body>
+
+</html>

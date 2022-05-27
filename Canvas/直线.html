@@ -1,0 +1,60 @@
+<!--
+ * @Author: Mahdoton 572250782@qq.com
+ * @Date: 2022-05-27 20:48:23
+ * @LastEditors: Mahdoton 572250782@qq.com
+ * @LastEditTime: 2022-05-27 21:09:00
+ * @FilePath: \CSS3\Canvas\直线.html
+ * @Description: 
+ * 
+ * Copyright (c) 2022 by Mahdoton 572250782@qq.com, All Rights Reserved. 
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #cv {
+      display: block;
+      margin: 0 auto;
+      border: 1px solid black;
+    }
+  </style>
+</head>
+
+<body>
+  <canvas id="cv" width="500px" height="500px"></canvas>
+  <script>
+    window.onload = function () {
+      function draw() {
+        /** @type {HTMLCanvasElement} */
+        // 获取canvas对象
+        let canvas = document.getElementById("cv");
+        // 获取上下文对象
+        let ctx = canvas.getContext("2d");
+        // console.log(ctx);
+        // 开启路径
+        ctx.beginPath();
+        // 确定起点
+        ctx.moveTo(100, 100);
+        // 确定终点
+        ctx.lineTo(200, 200);
+        // 设置颜色
+        ctx.strokeStyle = "red";
+        // 设置线宽
+        ctx.lineWidth = 10;
+        // 上色
+        ctx.stroke();
+        // 关闭路径
+        ctx.closePath();
+      }
+      draw();
+
+    }
+  </script>
+</body>
+
+</html>
