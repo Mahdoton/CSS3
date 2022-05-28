@@ -2,7 +2,7 @@
  * @Author: Mahdoton 572250782@qq.com
  * @Date: 2022-05-27 20:48:23
  * @LastEditors: Mahdoton 572250782@qq.com
- * @LastEditTime: 2022-05-27 21:09:00
+ * @LastEditTime: 2022-05-28 12:25:30
  * @FilePath: \CSS3\Canvas\直线.html
  * @Description: 
  * 
@@ -29,12 +29,16 @@
   <canvas id="cv" width="500px" height="500px"></canvas>
   <script>
     window.onload = function () {
+      /**
+       * @description: 
+       * @return {*}
+       */      
       function draw() {
         /** @type {HTMLCanvasElement} */
         // 获取canvas对象
-        let canvas = document.getElementById("cv");
+        const canvas = document.getElementById("cv");
         // 获取上下文对象
-        let ctx = canvas.getContext("2d");
+        const ctx = canvas.getContext("2d");
         // console.log(ctx);
         // 开启路径
         ctx.beginPath();
@@ -52,7 +56,6 @@
         ctx.closePath();
       }
       draw();
-
     }
   </script>
 </body>
