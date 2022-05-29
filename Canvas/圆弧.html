@@ -1,0 +1,62 @@
+<!--
+ * @Author: Mahdoton 572250782@qq.com
+ * @Date: 2022-05-28 21:04:04
+ * @LastEditors: Mahdoton 572250782@qq.com
+ * @LastEditTime: 2022-05-29 22:00:03
+ * @FilePath: \CSS3\Canvas\圆弧.html
+ * @Description: 
+ * 
+ * Copyright (c) 2022 by Mahdoton 572250782@qq.com, All Rights Reserved. 
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #cv {
+      display: block;
+      margin: 0 auto;
+      border: 1px solid black;
+    }
+  </style>
+</head>
+
+<body>
+  <canvas id="cv" width="500px" height="500px"></canvas>
+  <script>
+    function draw() {
+      /** @type {HTMLCanvasElement}*/
+      var canvas = document.getElementById('cv');
+      if (canvas.getContext) {
+        var ctx = canvas.getContext('2d');
+
+        for (var i = 0; i < 4; i++) {
+          for (var j = 0; j < 3; j++) {
+            ctx.beginPath();
+            var x = 25 + j * 50; // x 坐标值
+            var y = 25 + i * 50; // y 坐标值
+            var radius = 20; // 圆弧半径
+            var startAngle = 0; // 开始点
+            var endAngle = Math.PI + (Math.PI * j) / 2; // 结束点
+            var anticlockwise = i % 2 == 0 ? false : true; // 顺时针或逆时针
+
+            ctx.arc(x, y, radius, startAngle, endAngle, anticlockwise);
+
+            if (i > 1) {
+              ctx.fill();
+            } else {
+              ctx.stroke();
+            }
+          }
+        }
+      }
+    }
+    draw();
+  </script>
+</body>
+
+</html>
