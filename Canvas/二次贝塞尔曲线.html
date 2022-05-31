@@ -1,0 +1,52 @@
+<!--
+ * @Author: Mahdoton 572250782@qq.com
+ * @Date: 2022-05-28 21:04:04
+ * @LastEditors: Mahdoton 572250782@qq.com
+ * @LastEditTime: 2022-05-31 20:41:43
+ * @FilePath: \CSS3\Canvas\二次贝塞尔曲线.html
+ * @Description: 
+ * 
+ * Copyright (c) 2022 by Mahdoton 572250782@qq.com, All Rights Reserved. 
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #cv {
+      display: block;
+      margin: 0 auto;
+      border: 1px solid black;
+    }
+  </style>
+</head>
+
+<body>
+  <canvas id="cv" width="500px" height="500px"></canvas>
+  <script>
+    function draw() {
+      var canvas = document.getElementById('cv');
+      if (canvas.getContext) {
+        var ctx = canvas.getContext('2d');
+
+        // 二次贝塞尔曲线
+        ctx.beginPath();
+        ctx.moveTo(75, 25);
+        ctx.quadraticCurveTo(25, 25, 25, 62.5);
+        ctx.quadraticCurveTo(25, 100, 50, 100);
+        ctx.quadraticCurveTo(50, 120, 30, 125);
+        ctx.quadraticCurveTo(60, 120, 65, 100);
+        ctx.quadraticCurveTo(125, 100, 125, 62.5);
+        ctx.quadraticCurveTo(125, 25, 75, 25);
+        ctx.stroke();
+      }
+    }
+    draw();
+  </script>
+</body>
+
+</html>
