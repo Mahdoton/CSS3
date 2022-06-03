@@ -1,0 +1,58 @@
+<!--
+ * @Author: Mahdoton 572250782@qq.com
+ * @Date: 2022-05-28 21:04:04
+ * @LastEditors: Mahdoton 572250782@qq.com
+ * @LastEditTime: 2022-06-03 22:38:42
+ * @FilePath: \CSS3\Canvas\透明度.html
+ * @Description: 
+ * 
+ * Copyright (c) 2022 by Mahdoton 572250782@qq.com, All Rights Reserved. 
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #cv {
+      display: block;
+      margin: 0 auto;
+      border: 1px solid black;
+    }
+  </style>
+</head>
+
+<body>
+  <canvas id="cv" width="500px" height="500px"></canvas>
+  <script>
+    function draw() {
+      var ctx = document.getElementById('cv').getContext('2d');
+      // 画背景
+      ctx.fillStyle = '#FD0';
+      ctx.fillRect(0, 0, 75, 75);
+      ctx.fillStyle = '#6C0';
+      ctx.fillRect(75, 0, 75, 75);
+      ctx.fillStyle = '#09F';
+      ctx.fillRect(0, 75, 75, 75);
+      ctx.fillStyle = '#F30';
+      ctx.fillRect(75, 75, 75, 75);
+      ctx.fillStyle = '#FFF';
+
+      // 设置透明度值
+      ctx.globalAlpha = 0.2;
+
+      // 画半透明圆
+      for (var i = 0; i < 7; i++) {
+        ctx.beginPath();
+        ctx.arc(75, 75, 10 + 10 * i, 0, Math.PI * 2, true);
+        ctx.fill();
+      }
+    }
+    draw();
+  </script>
+</body>
+
+</html>
